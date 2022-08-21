@@ -3,7 +3,7 @@ const express = require('express');
 const app = express()
 const cors = require('cors');
 const morgan = require('morgan');
-const notes_router = require('./routes/notes_router');
+const notes_router = require('./routes/todo_router');
 
 // env stuff
 const port = process.env.SERVER_PORT || 3001;
@@ -24,4 +24,4 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 //middleware routes
-app.use('/notes', notes_router);
+app.use('/todo', notes_router);
