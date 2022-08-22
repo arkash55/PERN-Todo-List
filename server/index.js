@@ -17,6 +17,7 @@ app.listen(port, () => {
     console.log(`Listening to server at port ${port}`)
 });
 
+app.disable('etag');
 
 //middleware
 app.use(cors());

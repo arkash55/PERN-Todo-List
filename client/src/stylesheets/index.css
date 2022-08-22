@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.main {
+    background-color: rgb(125, 157, 156);
+    height: 100vh;
+}
+
+
+/* NAVBAR */
+.navbar {
+    font-family: 'Roboto Mono';
+    background-color: #576F72;
+    display: flex;
+    align-items: center;
+    height: 90px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+.title {
+    margin-right: auto;
+    color: rgb(228, 220, 207);
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.todo_count {
+    color: rgb(228, 220, 207);
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+
+/* TODO FORM */
+
+.todo_form {
+    margin-top: 50px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+}
+
+.form_field {
+    width: 600px;
+    height: 30px;
+    outline: none;
+    padding: 10px;
+    background-color: rgb(125, 157, 156);
+    border: solid #576F72 4px;
+    font-size: 1.5em;
+    color: #E4DCCF;
+    font-family: 'Roboto Mono';
+    font-weight: 400;
+}
+
+.form_button {
+    height: 58px;
+    background: none;
+    outline: none;
+    background-color: #576F72;
+    padding: 10px;
+    border: solid #576F72 5px;
+    font-size: 1.3em;
+    color: #E4DCCF;
+    font-family: 'Roboto Mono';
+}
+
+
+/* TABLE */
+.data_table {
+    width: 80vw;
+    margin: auto;
+    border-spacing: 5px;
+    font-family: 'Roboto Mono';
+    margin-top: 40px;
+    /* color: #E4DCCF; */
+}
+
+.tr_head {
+    border: 3px solid #576F72;
+    padding: 8px;
+    background-color: #576F72;
+}
+
+.table_desc {
+    height: 50px;
+    width: 55vw;
+    color: #E4DCCF;
+}
+
+.t_button {
+    text-align: center;
+}
+
+
+
+/* table_button */
+.table_button {
+    font-family: 'Roboto Mono';
+    font-size: 1.1em;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    background-color: #576F72;
+    font-weight: 400;
+}
