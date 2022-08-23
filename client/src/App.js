@@ -9,6 +9,7 @@ export default function App() {
 
     const [todoText, setTodoText] = useState('');
     const [todoData, setTodoData] = useState([]);
+    
 
     useEffect(() => {
         getTodo();
@@ -72,6 +73,34 @@ export default function App() {
     }
 
 
+    const clickedSave = async(id, newText) => {
+        const body = {description: newText};
+        try {
+            const newTodo = await fetch(`http://localhost:3000/todo/update/${id}`, {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(body)
+            }) 
+            const jsonData = await newTodo.json()
+            setTodoData((prev) => {
+                const new_data = [jsonData ,...prev];
+                for (let i=1; i<new_data.length; i++) {
+                    if (new_data[i].id === id) {
+                        new_data.splice(i, 1)
+                        break
+                    }
+                }
+                return new_data;
+                // const newData = prev.filter(todo => todo.id != id);
+                // newData.unshift(jsonData);
+                // return newData;
+            });
+        } catch(err) {
+            console.log(err.message);
+        }
+    };
+
+
 
     return (
         <div className="main">
@@ -80,7 +109,7 @@ export default function App() {
                 didWrite={didWrite}
                 fieldValue={todoText}
                 clickedAdd={addNote}/>
-            <Table todoData={todoData} clickedDelete={clickedDelete} />
+            <Table todoData={todoData} clickedDelete={clickedDelete} clickedSave={clickedSave}/>
         </div>
     )
 }

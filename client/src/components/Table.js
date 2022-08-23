@@ -1,18 +1,16 @@
-
 import TableRow from './TableRow';
-
+import EditTodo from './EditTodo';
 
 export default function Table(props) {
 
 
-
-
-    const mapped_data = props.todoData.map((todo) => {
+    const mapped_rows = props.todoData.map((todo) => {
         return <TableRow 
                     key={todo.id}
                     id={todo.id}
                     desc={todo.description}
                     clickedDelete={props.clickedDelete}
+                    clickedSave={props.clickedSave}
                 />
     });
 
@@ -27,7 +25,7 @@ export default function Table(props) {
                 </tr>
             </thead>
             <tbody className="t_body">
-                {mapped_data}
+                {mapped_rows}
             </tbody>
         </table>
     )
